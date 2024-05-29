@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計算機程式</title>
+    <style>
+        #seven {font-family: 標楷體, monospace;}
+        img{
+          height: auto;
+          max-width: 100%;
+        }
+        .topnav {
+        background-color: #333;
+        overflow: hidden;
+        }
+        /* Style the links inside the navigation bar */
+        .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        }
+        /* Change the color of links on hover */
+        .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+        }
+
+        /* Add a color to the active/current link */
+        .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+        }
+    </style>
+</head>
+<body>
+    <header><h1 id="seven">113學年度各科成品展</h1></header>
+    <div class="topnav">
+        <a class="active" href="https://simonsohai.github.io/myweb/%E4%BD%9C%E5%93%81%E6%88%90%E6%9E%9C%E8%88%87%E5%80%8B%E4%BA%BA%E5%AD%97%E4%BB%8B.html">首頁</a>
+        <a href="https://simonsohai.github.io/myself/%E8%87%AA%E6%88%91%E4%BB%8B%E7%B4%B9.html">個人介紹</a>
+        <a href="https://simonsohai.github.io/learning/%E8%87%AA%E5%AD%B8%E7%B6%B2%E7%AB%99.html">討論與自學網站</a>
+        <a href="https://simonsohai.github.io/-01/%E8%AD%89%E7%85%A7.html">證照</a>
+        <a href="https://docs.google.com/document/d/1GG02pwnsqyk6ZqLOTy2Ru9PGzsZ6IUL-j-SN8Y3Og6A/edit?usp=sharing">專題製作</a>
+        <a href="https://simonsohai.github.io/-/%E8%81%AF%E7%B5%A1%E8%B3%87%E8%A8%8A.html">聯絡資訊</a>
+    </div>
+    <h3>撰寫者：郭子綸</h3>
+    <h1>Coursera自學的測驗</h1>
+    <img src="https://i.imgur.com/vrKeaB9.png">
+    <h2>(這題主要是考收到的一些日期，並要計算出該日期為星期幾)</h2>
+    <img src="https://i.imgur.com/crNUtt7.png"><br>
+    <img src="https://i.imgur.com/PGCzTea.png"><br>
+    <hr>
+    <div>
+    <h3>程式碼</h3>
+
+    #include <stdio.h><br>
+
+    int main ()<br>
+        {<br>
+            <blockquote>int y, d;<br>
+            int n;<br>
+            int month, day;<br>
+            int leap_year;<br>
+            int days;
+        
+           scanf ( "%d%d", &y, &d );<br>
+           scanf ( "%d", &n );<br><br>
+        
+           leap_year = y % 400 == 0 || ( y % 100 && y % 4 == 0 ); //閏年還是非閏年<br><br>
+        
+           for ( int i = 0; i < n; i++ ) {    //計算每個輸入行</blockquote>
+            <blockquote><blockquote>if ( i ) printf ( " " );<br><br>
+        
+              days = d;<br>
+              scanf ( "%d%d", &month, &day );<br><br>
+        
+              if ( month < 1 || month > 12 ) { //若輸入的「月」有誤請輸出 -1<br>
+                 printf ( "-1\t" );<br>
+                 continue;<br>
+              }<br>
+              if ( day < 1 ) {   //若輸入的「月」無誤但「日」有誤請輸出 -2<br>
+                 printf ( "-2\t" );
+                 continue;<br>
+              }<br>
+              else {</blockquote></blockquote>
+                <blockquote><blockquote><blockquote>switch ( month ) {</blockquote></blockquote></blockquote>
+                    <blockquote><blockquote><blockquote><blockquote>case 2:</blockquote></blockquote></blockquote></blockquote>
+                    <blockquote><blockquote><blockquote><blockquote><blockquote>if ( ( leap_year && day > 29 ) ||<br>
+                            ( !leap_year && day > 28 ) ) {<br>
+                          printf ( "-2\t" );<br>
+                          continue;<br>
+                       }<br>
+                       break;<br>
+                    case 4: case 6: case 9: case 11:<br>
+                    if ( day > 30 ) {<br>
+                          printf ( "-2\t" );<br>
+                          continue;<br>
+                       }<br>
+                       break;<br>
+                    default:<br>
+                    if ( day > 31 ) {<br>
+                          printf ( "-2\t" );<br>
+                          continue;<br>
+                       }</blockquote></blockquote></blockquote></blockquote></blockquote>
+                       <blockquote><blockquote><blockquote><blockquote>}</blockquote></blockquote></blockquote></blockquote>
+                       <blockquote><blockquote><blockquote>}</blockquote></blockquote></blockquote>
+        
+                    <blockquote><blockquote>for ( int m = 1; m < month; m++ ) {</blockquote></blockquote>
+                    <blockquote><blockquote><blockquote>switch ( m ) {</blockquote></blockquote></blockquote><br>
+                    <blockquote><blockquote><blockquote><blockquote>case 2:   //定義2月份的日期</blockquote></blockquote></blockquote></blockquote>
+                    <blockquote><blockquote><blockquote><blockquote><blockquote>if ( leap_year ) days += 29;<br>
+                       else days += 28;<br>
+                       break;</blockquote></blockquote></blockquote></blockquote></blockquote>
+                    <blockquote><blockquote><blockquote><blockquote>case 4: case 6: case 9: case 11: //定義為30天的月份</blockquote></blockquote></blockquote></blockquote>
+                    <blockquote><blockquote><blockquote><blockquote><blockquote>days += 30;<br>
+                       break;</blockquote></blockquote></blockquote></blockquote></blockquote>
+                    <blockquote><blockquote><blockquote><blockquote>default:      //其餘的月份定義為31天</blockquote></blockquote></blockquote></blockquote>
+                    <blockquote><blockquote><blockquote><blockquote><blockquote>>days += 31;</blockquote></blockquote></blockquote></blockquote></blockquote>
+                    <blockquote><blockquote><blockquote>}</blockquote></blockquote></blockquote>
+                    <blockquote><blockquote> }</blockquote></blockquote>
+        
+              <blockquote><blockquote><blockquote>days += ( day - 1 );<br>
+              printf ( "%d\t", days % 7 );</blockquote></blockquote></blockquote>
+              <blockquote><blockquote>}</blockquote></blockquote>
+              <blockquote>return 0;</blockquote>
+        }
+</div>
+</body>
+</html>
